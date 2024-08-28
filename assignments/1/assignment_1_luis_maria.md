@@ -65,6 +65,8 @@ Runs the `ls` command with the `-a` and `-l` flags which lists all unhidden and 
 
 ### Code
 ![alt text](images/image-11.png)
+<br>
 
 ### Output
 ![alt text](images/image-10.png)
+<br>
