@@ -1,3 +1,5 @@
+# 1)
+
 ### `ls`
 lists all unhidden contents within the current directory.
 ![alt text](images/image.png)
@@ -48,3 +50,28 @@ Changes the access writes of the file `out` to allow all users to write to and d
 ### `ls -al`
 Runs the `ls` command with the `-a` and `-l` flags which lists all unhidden and hidden files with the long listing format.
 ![alt text](images/image-9.png)
+<br>
+
+# 2)
+
+### Code
+```python
+if __name__ == "__main__":
+    usr_num = int(input("Please enter an integer: "))
+    if usr_num < 0:
+        raise ValueError("Invalid integer {}".format(usr_num))
+
+    if usr_num == 0:
+        answer = 1
+    else:
+        answer = usr_num
+        for n in range(usr_num-1, 0, -1):
+            answer *= n
+
+    print("{}! = {}".format(usr_num, answer))
+```
+
+### Output
+![alt text](images/image-10.png)
+
+###
