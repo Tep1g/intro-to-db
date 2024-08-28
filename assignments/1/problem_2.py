@@ -1,5 +1,5 @@
 if __name__ == "__main__":
-    usr_num = int(input("Enter a positive integer: "))
+    usr_num = int(input("Please enter an integer: "))
     if usr_num < 0:
         raise ValueError("Invalid integer {}".format(usr_num))
 
