@@ -50,7 +50,7 @@ Views the file "out" within the termal, press q to stop viewing.
 <br>
 
 ### `chmod a+w out`
-Changes the access writes of the file "out" to allow all users to write to and delete it.
+Changes the access rights of the file "out" to allow all users to write to and delete it.
 
 ![alt text](images/image-8.png)
 <br>
