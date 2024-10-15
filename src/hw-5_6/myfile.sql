@@ -30,3 +30,9 @@ VALUES
     (3, 'Isaac', 'R' 'Malone', 'Hardware Engineer'),
     (4, 'Lilly', 'A', 'Silva', 'Hardware Engineer'),
     (5, 'Dominic', 'R', 'Ryan', 'Fullstack Developer');
+
+
+/*List all info sorted by l_name*/
+SELECT * from Employee
+ORDER BY l_name;
+
