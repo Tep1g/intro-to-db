@@ -1,3 +1,4 @@
+/*Create tables*/
 CREATE TABLE Employee (
     employee_id INT PRIMARY KEY,
     f_name VARCHAR,
@@ -20,3 +21,12 @@ CREATE TABLE Role (
         ON DELETE CASCADE,
     role_id INT PRIMARY
 )
+
+/*Insert 5 records*/
+INSERT INTO Employee
+VALUES
+    (1, 'Luis', 'O', 'Menendez', 'Firmware Engineer'),
+    (2, 'Ayden', 'J', 'Thompson', 'Firmware Engineer'),
+    (3, 'Isaac', 'R' 'Malone', 'Hardware Engineer'),
+    (4, 'Lilly', 'A', 'Silva', 'Hardware Engineer'),
+    (5, 'Dominic', 'R', 'Ryan', 'Fullstack Developer');
