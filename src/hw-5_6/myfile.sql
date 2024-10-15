@@ -5,12 +5,12 @@ CREATE TABLE employee (
     m_init CHAR(1),
     l_name VARCHAR,
     title VARCHAR
-)
+);
 
 CREATE TABLE department (
     dept_id INT PRIMARY KEY,
     dept_name VARCHAR
-)
+);
 
 CREATE TABLE position (
     FOREIGN KEY (employee_id)
@@ -20,7 +20,7 @@ CREATE TABLE position (
         REFERENCES Department(dept_id) 
         ON DELETE CASCADE,
     position_id INT PRIMARY
-)
+);
 
 /*Insert 5 records*/
 INSERT INTO employee
@@ -55,4 +55,4 @@ ORDER BY l_name;
 SELECT f_name, l_name, dept_name
     FROM employee FULL OUTER JOIN department
         ON position.employee_id = employee.employee_id AND
-        department.dept_id = employee.dept_id
+        department.dept_id = employee.dept_id;
