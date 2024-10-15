@@ -1,5 +1,5 @@
 /*Create tables*/
-CREATE TABLE Employee (
+CREATE TABLE employee (
     employee_id INT PRIMARY KEY,
     f_name VARCHAR,
     m_init CHAR(1),
@@ -7,12 +7,12 @@ CREATE TABLE Employee (
     title VARCHAR
 )
 
-CREATE TABLE Department (
+CREATE TABLE department (
     dept_id INT PRIMARY KEY,
     dept_name VARCHAR
 )
 
-CREATE TABLE Position (
+CREATE TABLE position (
     FOREIGN KEY (employee_id)
         REFERENCES Employee(employee_id) 
         ON DELETE CASCADE,
@@ -23,7 +23,7 @@ CREATE TABLE Position (
 )
 
 /*Insert 5 records*/
-INSERT INTO Employee
+INSERT INTO employee
 VALUES
     (1, 'Luis', 'O', 'Menendez', 'Firmware Engineer'),
     (2, 'Stan', 'J', 'Edgar', 'Chief Executive Officer'),
@@ -31,7 +31,7 @@ VALUES
     (4, 'Noelle', 'A', 'Silva', 'IT Support Technician'),
     (5, 'Dominic', 'R', 'Ryan', 'Marketing Coordinator');
 
-INSERT INTO Department
+INSERT INTO department
 VALUES
     (1, 'Software Development'),
     (2, 'Executive & Administrative'),
@@ -39,7 +39,7 @@ VALUES
     (4, 'Information Technology'),
     (5, 'Marketing & Sales');
 
-INSERT INTO Position
+INSERT INTO position
 VALUES
     (1, 1, 1),
     (2, 2, 2),
@@ -48,11 +48,11 @@ VALUES
     (5, 5, 5);
 
 /*List all info sorted by l_name*/
-SELECT * from Employee
+SELECT * from employee
 ORDER BY l_name;
 
 /*List f_name and l_name (from Employee) with dept_name (from Department)*/
 SELECT f_name, l_name, dept_name
-    FROM Employee FULL OUTER JOIN Department
-        ON Position.employee_id = Employee.employee_id AND
-        Department.dept_id = Employee.dept_id
+    FROM employee FULL OUTER JOIN department
+        ON position.employee_id = employee.employee_id AND
+        department.dept_id = employee.dept_id
