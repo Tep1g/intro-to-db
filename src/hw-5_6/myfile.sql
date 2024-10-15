@@ -31,6 +31,14 @@ VALUES
     (4, 'Noelle', 'A', 'Silva', 'IT Support Technician'),
     (5, 'Dominic', 'R', 'Ryan', 'Marketing Coordinator');
 
+INSERT INTO Department
+VALUES
+    (1, 'Software Development'),
+    (2, 'Executive & Administrative'),
+    (3, 'Hardware Development'),
+    (4, 'Information Technology'),
+    (5, 'Marketing & Sales');
+
 
 /*List all info sorted by l_name*/
 SELECT * from Employee
