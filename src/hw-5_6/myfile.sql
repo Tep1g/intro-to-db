@@ -26,10 +26,10 @@ CREATE TABLE Role (
 INSERT INTO Employee
 VALUES
     (1, 'Luis', 'O', 'Menendez', 'Firmware Engineer'),
-    (2, 'Ayden', 'J', 'Thompson', 'Firmware Engineer'),
+    (2, 'Stan', 'J', 'Edgar', 'Chief Executive Officer'),
     (3, 'Isaac', 'R' 'Malone', 'Hardware Engineer'),
-    (4, 'Lilly', 'A', 'Silva', 'Hardware Engineer'),
-    (5, 'Dominic', 'R', 'Ryan', 'Fullstack Developer');
+    (4, 'Noelle', 'A', 'Silva', 'IT Support Technician'),
+    (5, 'Dominic', 'R', 'Ryan', 'Marketing Coordinator');
 
 
 /*List all info sorted by l_name*/
