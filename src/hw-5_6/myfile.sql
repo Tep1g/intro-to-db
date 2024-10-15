@@ -12,14 +12,14 @@ CREATE TABLE Department (
     dept_name VARCHAR
 )
 
-CREATE TABLE Role (
+CREATE TABLE Position (
     FOREIGN KEY (employee_id)
         REFERENCES Employee(employee_id) 
         ON DELETE CASCADE,
     FOREIGN KEY (dept_id)
         REFERENCES Department(dept_id) 
         ON DELETE CASCADE,
-    role_id INT PRIMARY
+    position_id INT PRIMARY
 )
 
 /*Insert 5 records*/
