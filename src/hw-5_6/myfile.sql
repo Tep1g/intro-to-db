@@ -39,6 +39,13 @@ VALUES
     (4, 'Information Technology'),
     (5, 'Marketing & Sales');
 
+INSERT INTO Position
+VALUES
+    (1, 1, 1),
+    (2, 2, 2),
+    (3, 3, 3),
+    (4, 4, 4),
+    (5, 5, 5);
 
 /*List all info sorted by l_name*/
 SELECT * from Employee
