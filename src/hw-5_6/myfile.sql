@@ -51,3 +51,8 @@ VALUES
 SELECT * from Employee
 ORDER BY l_name;
 
+/*List f_name and l_name (from Employee) with dept_name (from Department)*/
+SELECT f_name, l_name, dept_name
+    FROM Employee FULL OUTER JOIN Department
+        ON Position.employee_id = Employee.employee_id AND
+        Department.dept_id = Employee.dept_id
