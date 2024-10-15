@@ -27,7 +27,7 @@ INSERT INTO employee
 VALUES
     (1, 'Luis', 'O', 'Menendez', 'Firmware Engineer'),
     (2, 'Stan', 'J', 'Edgar', 'Chief Executive Officer'),
-    (3, 'Isaac', 'R' 'Malone', 'Hardware Engineer'),
+    (3, 'Isaac', 'R', 'Malone', 'Hardware Engineer'),
     (4, 'Noelle', 'A', 'Silva', 'IT Support Technician'),
     (5, 'Dominic', 'R', 'Ryan', 'Marketing Coordinator');
 
