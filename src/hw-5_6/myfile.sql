@@ -102,6 +102,7 @@ UPDATE department
                 HAVING COUNT(*) <= 2
         );
 
+/*Create view that lists titles together with each name of a department*/
 CREATE VIEW title_department AS
     SELECT title, dept_name
         FROM employee LEFT OUTER JOIN position
