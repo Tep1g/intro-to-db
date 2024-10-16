@@ -27,7 +27,7 @@ CREATE TABLE position (
 );
 
 /*Insert 5 records*/
-INSERT INTO employee
+INSERT INTO employee (employee_id, f_name, m_init, l_name, title)
 VALUES
     (1, 'Luis', 'O', 'Menendez', 'Firmware Engineer'),
     (2, 'Stan', 'J', 'Edgar', 'Chief Executive Officer'),
@@ -35,7 +35,7 @@ VALUES
     (4, 'Noelle', 'A', 'Silva', 'IT Support Technician'),
     (5, 'Dominic', 'R', 'Ryan', 'Marketing Coordinator');
 
-INSERT INTO department
+INSERT INTO department (dept_id, dept_name)
 VALUES
     (1, 'Software Development'),
     (2, 'Executive & Administrative'),
@@ -43,7 +43,7 @@ VALUES
     (4, 'Information Technology'),
     (5, 'Marketing & Sales');
 
-INSERT INTO position
+INSERT INTO position (position_id, employee_id, dept_id)
 VALUES
     (1, 1, 1),
     (2, 2, 2),
