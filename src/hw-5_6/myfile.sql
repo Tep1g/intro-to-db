@@ -13,13 +13,15 @@ CREATE TABLE department (
 );
 
 CREATE TABLE position (
+    position_id INT PRIMARY KEY,
+    employee_id INT,
+    dept_id INT,
     FOREIGN KEY (employee_id)
-        REFERENCES Employee(employee_id) 
+        REFERENCES employee(employee_id) 
         ON DELETE CASCADE,
     FOREIGN KEY (dept_id)
-        REFERENCES Department(dept_id) 
-        ON DELETE CASCADE,
-    position_id INT PRIMARY
+        REFERENCES department(dept_id) 
+        ON DELETE CASCADE
 );
 
 /*Insert 5 records*/
