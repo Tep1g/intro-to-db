@@ -29,11 +29,12 @@ CREATE TABLE position (
 /*Insert 5 records*/
 INSERT INTO employee (employee_id, f_name, m_init, l_name, title)
 VALUES
-    (1, 'Luis', 'O', 'Menendez', 'Firmware Engineer'),
+    (1, 'Luis', 'O', 'Menendez', 'Embedded Software Engineer'),
     (2, 'Stan', 'J', 'Edgar', 'Chief Executive Officer'),
     (3, 'Isaac', 'R', 'Malone', 'Systems Engineer'),
     (4, 'Noelle', 'A', 'Silva', 'IT Support Technician'),
-    (5, 'Dominic', 'R', 'Ryan', 'Marketing Coordinator');
+    (5, 'Dominic', 'R', 'Ryan', 'Marketing Coordinator'),
+    (6, 'Nae', 'T', 'Kobayashi', 'Fullstack Developer');
 
 INSERT INTO department (dept_id, dept_name)
 VALUES
@@ -47,11 +48,12 @@ INSERT INTO position (position_id, employee_id, dept_id)
 VALUES
     (1, 1, 1),
     (2, 1, 4),
-    (3, 2, 3),
+    (3, 2, 2),
     (4, 3, 3),
     (5, 3, 1),
     (6, 4, 4),
-    (7, 5, 5);
+    (7, 5, 5),
+    (8, 6, 1);
 
 /*List all info sorted by l_name*/
 SELECT * from employee
