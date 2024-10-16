@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS position, employee, department;
+
 /*Create tables*/
 CREATE TABLE employee (
     employee_id INT PRIMARY KEY,
