@@ -1,3 +1,4 @@
+DROP VIEW IF EXISTS title_department;
 DROP TABLE IF EXISTS position, employee, department;
 
 /*Create tables*/
@@ -100,3 +101,12 @@ UPDATE department
                 GROUP BY dept_id
                 HAVING COUNT(*) <= 2
         );
+
+CREATE VIEW title_department AS
+    SELECT title, dept_name
+        FROM employee LEFT OUTER JOIN position
+            ON employee.employee_id = position.employee_id
+            FULL OUTER JOIN department
+                ON position.dept_id = department.dept_id;
+
+SELECT * FROM title_department;
