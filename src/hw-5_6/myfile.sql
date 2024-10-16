@@ -31,7 +31,7 @@ INSERT INTO employee (employee_id, f_name, m_init, l_name, title)
 VALUES
     (1, 'Luis', 'O', 'Menendez', 'Firmware Engineer'),
     (2, 'Stan', 'J', 'Edgar', 'Chief Executive Officer'),
-    (3, 'Isaac', 'R', 'Malone', 'Hardware Engineer'),
+    (3, 'Isaac', 'R', 'Malone', 'Systems Engineer'),
     (4, 'Noelle', 'A', 'Silva', 'IT Support Technician'),
     (5, 'Dominic', 'R', 'Ryan', 'Marketing Coordinator');
 
@@ -46,10 +46,12 @@ VALUES
 INSERT INTO position (position_id, employee_id, dept_id)
 VALUES
     (1, 1, 1),
-    (2, 2, 2),
-    (3, 3, 3),
-    (4, 4, 4),
-    (5, 5, 5);
+    (2, 1, 4),
+    (3, 2, 3),
+    (4, 3, 3),
+    (5, 3, 1),
+    (6, 4, 4),
+    (7, 5, 5);
 
 /*List all info sorted by l_name*/
 SELECT * from employee
