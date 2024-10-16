@@ -79,7 +79,7 @@ DELETE
             SELECT dept_id
                 FROM position
                 GROUP BY dept_id
-                HAVING COUNT(*) > 0
+                HAVING COUNT(*) >= 1
                 LIMIT 1
         );
 
@@ -88,3 +88,15 @@ SELECT employee.f_name, employee.l_name, COUNT(position.employee_id) as num_posi
     FROM employee LEFT OUTER JOIN position
         ON employee.employee_id = position.employee_id
         GROUP BY employee.employee_id;
+
+ALTER TABLE department
+    ADD small_department BOOLEAN DEFAULT 'false';
+
+UPDATE department
+    SET small_department = 'true'
+        WHERE dept_id IN (
+            SELECT dept_id
+                FROM position
+                GROUP BY dept_id
+                HAVING COUNT(*) <= 2
+        );
