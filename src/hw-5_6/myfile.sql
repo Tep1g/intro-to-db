@@ -63,3 +63,9 @@ SELECT f_name, l_name, dept_name
         ON employee.employee_id = position.employee_id
         FULL OUTER JOIN department
             ON position.dept_id = department.dept_id;
+
+/*List f_name and l_name (from employee) with number of position*/
+SELECT employee.f_name, employee.l_name, COUNT(position.employee_id) as num_positions
+    FROM employee LEFT OUTER JOIN position
+        ON (employee.employee_id = position.employee_id)
+        GROUP BY employee.employee_id;
