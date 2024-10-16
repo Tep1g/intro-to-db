@@ -64,10 +64,10 @@ SELECT f_name, l_name, dept_name
         FULL OUTER JOIN department
             ON position.dept_id = department.dept_id;
 
-/*List f_name and l_name (from employee) with number of position*/
+/*List f_name and l_name (from employee) with number of positions*/
 SELECT employee.f_name, employee.l_name, COUNT(position.employee_id) as num_positions
     FROM employee LEFT OUTER JOIN position
-        ON (employee.employee_id = position.employee_id)
+        ON employee.employee_id = position.employee_id
         GROUP BY employee.employee_id;
 
 /*Delete one record from department table that has at least one entry in the position table*/
@@ -80,3 +80,9 @@ DELETE
                 HAVING COUNT(*) > 0
                 LIMIT 1
         );
+
+/*Show that the number of roles decreased for one employee*/
+SELECT employee.f_name, employee.l_name, COUNT(position.employee_id) as num_positions
+    FROM employee LEFT OUTER JOIN position
+        ON employee.employee_id = position.employee_id
+        GROUP BY employee.employee_id;
