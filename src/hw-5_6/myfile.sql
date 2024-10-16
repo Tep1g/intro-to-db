@@ -57,6 +57,7 @@ ORDER BY l_name;
 
 /*List f_name and l_name (from Employee) with dept_name (from Department)*/
 SELECT f_name, l_name, dept_name
-    FROM employee FULL OUTER JOIN department
-        ON position.employee_id = employee.employee_id AND
-        department.dept_id = employee.dept_id;
+    FROM employee LEFT OUTER JOIN position
+        ON employee.employee_id = position.employee_id
+        FULL OUTER JOIN department
+            ON position.dept_id = department.dept_id;
