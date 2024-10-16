@@ -76,5 +76,7 @@ DELETE
         WHERE dept_id IN (
             SELECT dept_id
                 FROM position
+                GROUP BY dept_id
+                HAVING COUNT(*) > 0
                 LIMIT 1
         );
