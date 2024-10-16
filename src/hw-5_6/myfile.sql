@@ -69,3 +69,12 @@ SELECT employee.f_name, employee.l_name, COUNT(position.employee_id) as num_posi
     FROM employee LEFT OUTER JOIN position
         ON (employee.employee_id = position.employee_id)
         GROUP BY employee.employee_id;
+
+/*Delete one record from department table that has at least one entry in the position table*/
+DELETE
+    FROM department
+        WHERE dept_id IN (
+            SELECT dept_id
+                FROM position
+                LIMIT 1
+        );
