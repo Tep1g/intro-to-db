@@ -104,10 +104,12 @@ UPDATE department
 
 /*Create view that lists titles together with each name of a department*/
 CREATE VIEW title_department AS
-    SELECT title, dept_name
-        FROM employee LEFT OUTER JOIN position
+    SELECT title, STRING_AGG(dept_name, ', ') AS dept_names
+        FROM employee
+        LEFT OUTER JOIN position 
             ON employee.employee_id = position.employee_id
-            FULL OUTER JOIN department
-                ON position.dept_id = department.dept_id;
+        LEFT OUTER JOIN department 
+            ON position.dept_id = department.dept_id
+        GROUP BY title;
 
 SELECT * FROM title_department;
