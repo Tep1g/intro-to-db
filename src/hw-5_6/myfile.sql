@@ -68,7 +68,7 @@ SELECT f_name, l_name, dept_name
             ON position.dept_id = department.dept_id;
 
 /*List f_name and l_name (from employee) with number of positions*/
-SELECT employee.f_name, employee.l_name, COUNT(position.employee_id) as num_positions
+SELECT employee.l_name, COUNT(position.employee_id) as num_positions
     FROM employee LEFT OUTER JOIN position
         ON employee.employee_id = position.employee_id
         GROUP BY employee.employee_id;
@@ -85,7 +85,7 @@ DELETE
         );
 
 /*Show that the number of roles decreased for one employee*/
-SELECT employee.f_name, employee.l_name, COUNT(position.employee_id) as num_positions
+SELECT employee.l_name, COUNT(position.employee_id) as num_positions
     FROM employee LEFT OUTER JOIN position
         ON employee.employee_id = position.employee_id
         GROUP BY employee.employee_id;
