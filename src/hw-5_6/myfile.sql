@@ -56,10 +56,12 @@ VALUES
     (8, 4, 4),
     (9, 5, 5);
 
+/*2.a*/
 /*List all info sorted by l_name*/
 SELECT * from employee
 ORDER BY l_name;
 
+/*2.b*/
 /*List f_name and l_name (from Employee) with dept_name (from Department)*/
 SELECT f_name, l_name, dept_name
     FROM employee LEFT OUTER JOIN "role"
@@ -67,12 +69,14 @@ SELECT f_name, l_name, dept_name
         FULL OUTER JOIN department
             ON role.dept_id = department.dept_id;
 
+/*2.c*/
 /*List f_name and l_name (from employee) with number of roles*/
 SELECT employee.l_name, COUNT(role.employee_id) as num_roles
     FROM employee LEFT OUTER JOIN "role"
         ON employee.employee_id = role.employee_id
         GROUP BY employee.employee_id;
 
+/*2.d*/
 /*Delete one record from department table that has at least one entry in the role table*/
 DELETE
     FROM department
@@ -84,12 +88,14 @@ DELETE
                 LIMIT 1
         );
 
-/*Show that the number of roles decreased for one employee*/
+/*2.e*/
+/*Show that the number of roles decreased, by 1, for the employee(s)*/
 SELECT employee.l_name, COUNT(role.employee_id) as num_roles
     FROM employee LEFT OUTER JOIN "role"
         ON employee.employee_id = role.employee_id
         GROUP BY employee.employee_id;
 
+/*2.f*/
 ALTER TABLE department
     ADD small_department BOOLEAN DEFAULT 'false';
 
@@ -102,6 +108,7 @@ UPDATE department
                 HAVING COUNT(*) <= 2
         );
 
+/*2.g*/
 /*Create view that lists titles together with each name of a department*/
 CREATE VIEW title_department AS
     SELECT title, STRING_AGG(dept_name, ', ') AS dept_names
