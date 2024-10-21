@@ -31,11 +31,10 @@ CREATE TABLE "role" (
 INSERT INTO employee (employee_id, f_name, m_init, l_name, title)
 VALUES
     (1, 'Luis', 'O', 'Menendez', 'Embedded Software Engineer'),
-    (2, 'Stan', 'J', 'Edgar', 'Chief Executive Officer'),
+    (2, 'Stan', 'J', 'Edgar', 'Chief Technology Officer'),
     (3, 'Isaac', 'R', 'Malone', 'Systems Engineer'),
     (4, 'Noelle', 'A', 'Silva', 'IT Support Technician'),
-    (5, 'Dominic', 'R', 'Ryan', 'Marketing Coordinator'),
-    (6, 'Nae', 'T', 'Kobayashi', 'Fullstack Developer');
+    (5, 'Dominic', 'R', 'Ryan', 'Marketing Coordinator');
 
 INSERT INTO department (dept_id, dept_name)
 VALUES
@@ -49,12 +48,13 @@ INSERT INTO "role" (role_id, employee_id, dept_id)
 VALUES
     (1, 1, 1),
     (2, 1, 4),
-    (3, 2, 2),
-    (4, 3, 3),
-    (5, 3, 1),
-    (6, 4, 4),
-    (7, 5, 5),
-    (8, 6, 1);
+    (3, 2, 1),
+    (4, 2, 2),
+    (5, 2, 3),
+    (6, 3, 3),
+    (7, 3, 1),
+    (8, 4, 4),
+    (9, 5, 5);
 
 /*List all info sorted by l_name*/
 SELECT * from employee
