@@ -1,0 +1,77 @@
+Script started on 2024-10-21 02:45:45-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="102" LINES="12"]
+[?2004h]0;luis.maria@lab17: ~/Documents/csci-765/hw-5_6[01;32mluis.maria@lab17[00m:[01;34m~/Documents/csci-765/hw-5_6[00m$ localpsql -f myfile.sqls[Kocalpsql -f myfile.sql
+[?2004lPassword for user luis_maria_765f24: 
+DROP VIEW
+DROP TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+INSERT 0 5
+INSERT 0 5
+INSERT 0 9
+ dept_id |         dept_name          
+---------+----------------------------
+       1 | Software Development
+       2 | Executive & Administrative
+       3 | Hardware Development
+       4 | Information Technology
+       5 | Marketing & Sales
+(5 rows)
+
+ employee_id | f_name  | m_init |  l_name  |           title            
+-------------+---------+--------+----------+----------------------------
+           2 | Stan    | J      | Edgar    | Chief Technology Officer
+           3 | Isaac   | R      | Malone   | Systems Engineer
+           1 | Luis    | O      | Menendez | Embedded Software Engineer
+           5 | Dominic | R      | Ryan     | Marketing Coordinator
+           4 | Noelle  | A      | Silva    | IT Support Technician
+(5 rows)
+
+ f_name  |  l_name  |         dept_name          
+---------+----------+----------------------------
+ Luis    | Menendez | Software Development
+ Luis    | Menendez | Information Technology
+ Stan    | Edgar    | Software Development
+ Stan    | Edgar    | Executive & Administrative
+ Stan    | Edgar    | Hardware Development
+ Isaac   | Malone   | Hardware Development
+ Isaac   | Malone   | Software Development
+ Noelle  | Silva    | Information Technology
+ Dominic | Ryan     | Marketing & Sales
+(9 rows)
+
+  l_name  | num_roles 
+----------+-----------
+ Silva    |         1
+ Edgar    |         3
+ Malone   |         2
+ Ryan     |         1
+ Menendez |         2
+(5 rows)
+
+DELETE 1
+  l_name  | num_roles 
+----------+-----------
+ Silva    |         1
+ Edgar    |         2
+ Malone   |         1
+ Ryan     |         1
+ Menendez |         2
+(5 rows)
+
+ALTER TABLE
+UPDATE 3
+CREATE VIEW
+           title            |                    dept_names                    
+----------------------------+--------------------------------------------------
+ Marketing Coordinator      | Marketing & Sales
+ Chief Technology Officer   | Software Development, Executive & Administrative
+ Systems Engineer           | Software Development
+ IT Support Technician      | Information Technology
+ Embedded Software Engineer | Software Development, Information Technology
+(5 rows)
+
+[?2004h]0;luis.maria@lab17: ~/Documents/csci-765/hw-5_6[01;32mluis.maria@lab17[00m:[01;34m~/Documents/csci-765/hw-5_6[00m$ exit
+[?2004lexit
+
+Script done on 2024-10-21 02:45:55-05:00 [COMMAND_EXIT_CODE="0"]
