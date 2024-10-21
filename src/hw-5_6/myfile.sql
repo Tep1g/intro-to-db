@@ -1,5 +1,5 @@
 DROP VIEW IF EXISTS title_department;
-DROP TABLE IF EXISTS position, employee, department;
+DROP TABLE IF EXISTS employee, department, "role";
 
 /*Create tables*/
 CREATE TABLE employee (
@@ -15,8 +15,8 @@ CREATE TABLE department (
     dept_name VARCHAR
 );
 
-CREATE TABLE position (
-    position_id INT PRIMARY KEY,
+CREATE TABLE "role" (
+    role_id INT PRIMARY KEY,
     employee_id INT,
     dept_id INT,
     FOREIGN KEY (employee_id)
@@ -45,7 +45,7 @@ VALUES
     (4, 'Information Technology'),
     (5, 'Marketing & Sales');
 
-INSERT INTO position (position_id, employee_id, dept_id)
+INSERT INTO "role" (role_id, employee_id, dept_id)
 VALUES
     (1, 1, 1),
     (2, 1, 4),
@@ -62,32 +62,32 @@ ORDER BY l_name;
 
 /*List f_name and l_name (from Employee) with dept_name (from Department)*/
 SELECT f_name, l_name, dept_name
-    FROM employee LEFT OUTER JOIN position
-        ON employee.employee_id = position.employee_id
+    FROM employee LEFT OUTER JOIN "role"
+        ON employee.employee_id = role.employee_id
         FULL OUTER JOIN department
-            ON position.dept_id = department.dept_id;
+            ON role.dept_id = department.dept_id;
 
-/*List f_name and l_name (from employee) with number of positions*/
-SELECT employee.l_name, COUNT(position.employee_id) as num_positions
-    FROM employee LEFT OUTER JOIN position
-        ON employee.employee_id = position.employee_id
+/*List f_name and l_name (from employee) with number of roles*/
+SELECT employee.l_name, COUNT(role.employee_id) as num_roles
+    FROM employee LEFT OUTER JOIN "role"
+        ON employee.employee_id = role.employee_id
         GROUP BY employee.employee_id;
 
-/*Delete one record from department table that has at least one entry in the position table*/
+/*Delete one record from department table that has at least one entry in the role table*/
 DELETE
     FROM department
         WHERE dept_id IN (
             SELECT dept_id
-                FROM position
+                FROM "role"
                 GROUP BY dept_id
                 HAVING COUNT(*) >= 1
                 LIMIT 1
         );
 
 /*Show that the number of roles decreased for one employee*/
-SELECT employee.l_name, COUNT(position.employee_id) as num_positions
-    FROM employee LEFT OUTER JOIN position
-        ON employee.employee_id = position.employee_id
+SELECT employee.l_name, COUNT(role.employee_id) as num_roles
+    FROM employee LEFT OUTER JOIN "role"
+        ON employee.employee_id = role.employee_id
         GROUP BY employee.employee_id;
 
 ALTER TABLE department
@@ -97,7 +97,7 @@ UPDATE department
     SET small_department = 'true'
         WHERE dept_id IN (
             SELECT dept_id
-                FROM position
+                FROM "role"
                 GROUP BY dept_id
                 HAVING COUNT(*) <= 2
         );
@@ -106,10 +106,10 @@ UPDATE department
 CREATE VIEW title_department AS
     SELECT title, STRING_AGG(dept_name, ', ') AS dept_names
         FROM employee
-        LEFT OUTER JOIN position 
-            ON employee.employee_id = position.employee_id
+        LEFT OUTER JOIN "role" 
+            ON employee.employee_id = role.employee_id
         LEFT OUTER JOIN department 
-            ON position.dept_id = department.dept_id
+            ON role.dept_id = department.dept_id
         GROUP BY title;
 
 SELECT * FROM title_department;
