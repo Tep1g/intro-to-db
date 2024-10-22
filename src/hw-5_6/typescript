@@ -1,5 +1,5 @@
-Script started on 2024-10-21 02:45:45-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="102" LINES="12"]
-[?2004h]0;luis.maria@lab17: ~/Documents/csci-765/hw-5_6[01;32mluis.maria@lab17[00m:[01;34m~/Documents/csci-765/hw-5_6[00m$ localpsql -f myfile.sqls[Kocalpsql -f myfile.sql
+Script started on 2024-10-21 19:14:24-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="102" LINES="12"]
+[?2004h]0;luis.maria@lab17: ~/Documents/csci-765/hw-5_6[01;32mluis.maria@lab17[00m:[01;34m~/Documents/csci-765/hw-5_6[00m$ lexitlocalpsql -f myfile.sqlexit[Klocalpsql -f myfile.sql
 [?2004lPassword for user luis_maria_765f24: 
 DROP VIEW
 DROP TABLE
@@ -9,15 +9,6 @@ CREATE TABLE
 INSERT 0 5
 INSERT 0 5
 INSERT 0 9
- dept_id |         dept_name          
----------+----------------------------
-       1 | Software Development
-       2 | Executive & Administrative
-       3 | Hardware Development
-       4 | Information Technology
-       5 | Marketing & Sales
-(5 rows)
-
  employee_id | f_name  | m_init |  l_name  |           title            
 -------------+---------+--------+----------+----------------------------
            2 | Stan    | J      | Edgar    | Chief Technology Officer
@@ -61,6 +52,14 @@ DELETE 1
 
 ALTER TABLE
 UPDATE 3
+ dept_id |         dept_name          | small_department 
+---------+----------------------------+------------------
+       1 | Software Development       | f
+       2 | Executive & Administrative | t
+       4 | Information Technology     | t
+       5 | Marketing & Sales          | t
+(4 rows)
+
 CREATE VIEW
            title            |                    dept_names                    
 ----------------------------+--------------------------------------------------
@@ -74,4 +73,4 @@ CREATE VIEW
 [?2004h]0;luis.maria@lab17: ~/Documents/csci-765/hw-5_6[01;32mluis.maria@lab17[00m:[01;34m~/Documents/csci-765/hw-5_6[00m$ exit
 [?2004lexit
 
-Script done on 2024-10-21 02:45:55-05:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2024-10-21 19:14:28-05:00 [COMMAND_EXIT_CODE="0"]

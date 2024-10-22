@@ -108,6 +108,8 @@ UPDATE department
                 HAVING COUNT(*) <= 2
         );
 
+select * from department;
+
 /*2.g*/
 /*Create view that lists titles together with each name of a department*/
 CREATE VIEW title_department AS
