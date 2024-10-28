@@ -8,9 +8,11 @@ if __name__ == "__main__":
     # Number 1
     # Part a
     thistuple = ("apple", "banana", "cherry")
-    df = pandas.read_csv("train.csv").replace(numpy.nan, None)
+    index_1 = thistuple[1]
+    print(index_1)
 
     # Part b
+    df = pandas.read_csv("train.csv").replace(numpy.nan, None)
     print(df.head(10))
 
     # Part c
