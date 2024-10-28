@@ -16,3 +16,15 @@ if __name__ == "__main__":
     # Part c
     histogram = df['LoanAmount'].hist(bins=50)
     pyplot.show()
+
+    password = input("Enter password: ")
+
+    with open("params.txt", "r") as infile:
+        db_params = {
+            "dbname"    : infile.readline(),
+            "host"      : infile.readline(),
+            "user"      : infile.readline(),
+            "password"  : password,
+            "port"      : infile.readline(),
+            "sslmode"   : infile.readline()
+        }
