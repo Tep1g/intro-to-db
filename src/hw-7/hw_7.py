@@ -3,22 +3,25 @@ import numpy
 import pandas
 import psycopg2
 
-if __name__ == "__main__":
-
-    # Number 1
+def part_a():
     # Part a
     thistuple = ("apple", "banana", "cherry")
     index_1 = thistuple[1]
     print(index_1)
 
+def part_b():
     # Part b
-    df = pandas.read_csv("train.csv").replace(numpy.nan, None)
+    df = pandas.read_csv("train.csv")
     print(df.head(10))
 
+def part_c():
     # Part c
-    histogram = df['LoanAmount'].hist(bins=50)
+    df = pandas.read_csv("train.csv")
+    df['LoanAmount'].hist(bins=50)
     pyplot.show()
 
+def part_d():
+    # Part d
     password = input("Enter password: ")
 
     params = []
