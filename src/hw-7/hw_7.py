@@ -19,12 +19,16 @@ if __name__ == "__main__":
 
     password = input("Enter password: ")
 
-    with open("params.txt", "r") as infile:
-        db_params = {
-            "dbname"    : infile.readline(),
-            "host"      : infile.readline(),
-            "user"      : infile.readline(),
-            "password"  : password,
-            "port"      : infile.readline(),
-            "sslmode"   : infile.readline()
-        }
+    params = []
+    with open("params.txt", "r") as file:
+        for line in file:
+            params.append(line.strip())
+
+    db_params = {
+        "dbname"    : params[0],
+        "host"      : params[1],
+        "user"      : params[2],
+        "password"  : password,
+        "port"      : params[3],
+        "sslmode"   : params[4]
+    }
