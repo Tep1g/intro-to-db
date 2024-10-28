@@ -17,11 +17,13 @@ def part_b():
 def part_c():
     # Part c
     df = pandas.read_csv("train.csv")
-    df['LoanAmount'].hist(bins=50)
+    histogram = df['LoanAmount'].hist(bins=50)
     pyplot.show()
 
 def part_d():
     # Part d
+    df = pandas.read_csv("train.csv").replace(numpy.nan, None)
+
     password = input("Enter password: ")
 
     params = []
