@@ -73,10 +73,32 @@ def part_d():
 
     for index, row in df.iterrows():
 
-        # Gather booleans
+        # Convert booleans and certain NaN values
+        gender_val = row["Gender"]
+        gender = gender_val if gender_val != None else "N/A"
         married = True if row["Married"] == "Yes" else False
+        dependents_val = row["Dependents"]
+        dependents = dependents_val if dependents_val != None else 0
+        applic_income_val = row["ApplicantIncome"]
+        applic_income = applic_income_val if applic_income_val != None else 0
+        # Assume NULL coapplicant_income is a valid input
+        loan_amount_val = row["LoanAmount"]
+        loan_amount = loan_amount_val if loan_amount_val != None else 0
+        # Assume NULL loan_amount_term is a valid input
+        credit_hist_value = row["Credit_History"]
+        credit_history = credit_hist_value if credit_hist_value != None else 0
+        property_area_val = row["Property_Area"]
+        property_area = property_area_val if property_area_val != None else "Other"
         self_employed = True if row["Self_Employed"] == "Yes" else False
-        loan_status = True if row["Loan_Status"] == "Y" else False
+        loan_status_val = row["Loan_Status"]
+
+        # Assume NULL loan_status is a valid input
+        if loan_status_val == "Y":
+            loan_status = True
+        elif loan_status_val == "N":
+            loan_status = False
+        else:
+            loan_status = loan_status_val
 
         cursor.execute(
             """
@@ -114,17 +136,17 @@ def part_d():
             ,
             (
                 row["Loan_ID"],
-                row["Gender"],
+                gender,
                 married,
-                row["Dependents"],
+                dependents,
                 row["Education"],
                 self_employed,
-                row["ApplicantIncome"],
+                applic_income,
                 row["CoapplicantIncome"],
-                row["LoanAmount"],
+                loan_amount,
                 row["Loan_Amount_Term"],
-                row["Credit_History"],
-                row["Property_Area"],
+                credit_history,
+                property_area,
                 loan_status
             )
         )
