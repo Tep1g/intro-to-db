@@ -17,7 +17,7 @@ def part_b():
 def part_c():
     # Part c
     df = pandas.read_csv("train.csv")
-    df['LoanAmount'].hist(bins=50)
+    df['LoanAmount'].hist(bins=20)
     pyplot.show()
 
 def part_d():
