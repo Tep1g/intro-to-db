@@ -8,7 +8,7 @@ if __name__ == "__main__":
     # Number 1
     # Part a
     thistuple = ("apple", "banana", "cherry")
-    df = pandas.read_csv("train.csv")
+    df = pandas.read_csv("train.csv").replace(numpy.nan, None)
 
     # Part b
     print(df.head(10))
