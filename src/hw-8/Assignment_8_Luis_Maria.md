@@ -4,7 +4,7 @@
 
 ## Bluetooth communication
 
-I've successfully implemented and tested Bluetooth Low Energy (BLE) communication between the RPi Pico and my desktop PC. The microcontroller periodically transmits a 16-bit value over BLE using the MicroPython `aioble` library (and a configured timer interrupt). The desktop PC receives and stores each of these values, to a list, using interrupt requests over a set period of time. The `Bleak` Python BLE library provides us with this bluetooth interface.
+I've successfully implemented and tested Bluetooth Low Energy (BLE) communication between the RPi Pico and my desktop PC. The microcontroller periodically transmits a 16-bit measurement over BLE using the MicroPython `aioble` library (and a configured timer interrupt). The desktop PC receives and stores each of these measurements, to a list, using interrupt requests over a set period of time. The `Bleak` Python BLE library provides us with this bluetooth interface.
 
 #### RPi Pico MicroPython Script
 ```py
