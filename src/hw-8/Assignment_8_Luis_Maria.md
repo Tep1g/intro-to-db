@@ -1,10 +1,10 @@
-# 1) Current progress
+# 1) Completed Stuff
 
-[The full project repository can be found here](https://github.com/Tep1g/sensor-data-processing)
+[The full project repository can be found here (some branches may not yet be merged to main)](https://github.com/Tep1g/sensor-data-processing)
 
 ## Bluetooth communication
 
-I've successfully implemented and tested Bluetooth Low Energy (BLE) communication between the RPI Pico and my desktop PC. The microcontroller periodically transmits a 16-bit value over BLE using the MicroPython `aioble` library (and a configured timer interrupt peripheral). The desktop PC receives and stores every one of these values to a list using interrupt requests from the `Bleak` Python bluetooth library.
+I've successfully implemented and tested Bluetooth Low Energy (BLE) communication between the RPi Pico and my desktop PC. The microcontroller periodically transmits a 16-bit value over BLE using the MicroPython `aioble` library (and a configured timer interrupt). The desktop PC receives and stores each of these values, to a list, using interrupt requests over a set period of time. The `Bleak` Python BLE library provides us with this bluetooth interface.
 
 #### RPi Pico MicroPython Script
 ```py
@@ -59,7 +59,7 @@ if __name__ == "__main__":
 
 ## Data processing
 
-I've added data processing functions that get accessed by a desktop Python script. These functions take the 16-bit readings, convert them to temperatures, and use the `scipy` library's least squares linear curve fit function to generate the parameters for a a decaying exponential equation that represents the temperature curve of a hot liquid cooling down to room temperature.
+I've added data processing functions that get accessed by a desktop Python script. These functions take the 16-bit readings, convert them to temperatures, and use the `scipy` library's least squares linear curve fit function to generate the coefficients for a a decaying exponential equation that represents the temperature curve of a hot liquid cooling down to room temperature.
 
 #### Desktop Data Processing Script
 ```py
@@ -96,11 +96,11 @@ if __name__ == "__main__":
 
 ## PSQL Database
 
-I've added methods for storing and retrieving the parameters of the generated decaying exponential equation using `psycopg2`.
+I've added methods for storing and retrieving the coefficients of the generated decaying exponential equation using `psycopg2`.
 
 ## Graphing
 
-I've also created a separate desktop Python script for retrieving the decaying exponential equation parameters (from the PSQL DB) and plotting it using `numpy`.
+I've also created a separate desktop Python script for retrieving the decaying exponential equation coefficients (from the PSQL DB) and plotting it using `numpy`.
 
 #### Desktop Graphing Script
 ```py
