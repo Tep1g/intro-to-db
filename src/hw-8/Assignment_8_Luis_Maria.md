@@ -128,6 +128,8 @@ if __name__ == "__main__":
     plot_temp_func(duration_s=duration, a=a, b=b, T_amb=T_amb)
 ```
 
+<div style="page-break-after: always;"></div>
+
 # 2) Incomplete Stuff
 
 ## Data processing
