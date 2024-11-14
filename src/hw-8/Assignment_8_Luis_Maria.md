@@ -127,3 +127,26 @@ if __name__ == "__main__":
 
     plot_temp_func(duration_s=duration, a=a, b=b, T_amb=T_amb)
 ```
+
+# 2) Incomplete Stuff
+
+## Data processing
+
+I'm awaiting the arrival of an insulated negative temperature coefficient (NTC) thermistor. This piece of equipment will enable the measurement of a liquid's temperature without having to worry about the additional parallel resistance that occurs from the liquid shorting the terminals of the thermistor. I need to run a test to make sure that my conversions from analog measurements to degrees celsius are correct.
+
+Optionally, I may want to export the analog measurements and manually curve fit them to a temperature curve using MATLAB. By comparing this MATLAB generated curve to the one generated in my Python script, I may be able to catch minor errors or discrepancies.
+
+## PSQL Database
+
+I still need to install and setup the local PSQL server that the Python scripts will interface with on my desktop computer. I also need to do a test run to make sure that the scripts properly create the temperature coefficients table and insert/retrieve records.
+
+## Graphing
+
+After retrieving a record from the PSQL table, I need to test the graphing script to make sure it properly plots the temperature curve.
+
+## Required Resources
+- Local PSQL server
+- Insulated NTC thermistor
+- Test data processing script
+- (optional) Supplementary MATLAB test script to validate curve fitting
+- Test graphing script
