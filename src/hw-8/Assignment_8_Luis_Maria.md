@@ -100,7 +100,7 @@ I've added methods for storing and retrieving the coefficients of the generated 
 
 ## Graphing
 
-I've also created a separate desktop Python script for retrieving the decaying exponential equation coefficients (from the PSQL DB) and plotting it using `numpy`.
+I've also started working on a separate desktop Python script for retrieving the decaying exponential equation coefficients (from the PSQL DB) and plotting them using `numpy`.
 
 #### Desktop Graphing Script
 ```py
@@ -111,19 +111,16 @@ if __name__ == "__main__":
     db = psql_db.Database
     db.get_params()
     db.connect()
-    records = db.get_all_records()
-    for record in records:
-        print(record)
+
+    #TODO: Query coefficients from db
+    record = []
 
     db.disconnect()
 
-    data_id = int(input("Enter data_id for desired dataset: "))
-    for record in records:
-        if record[0] == data_id:
-            duration = record[2]
-            a = record[3]
-            b = record[4]
-            T_amb = record[5]
+    duration = record[2]
+    a = record[3]
+    b = record[4]
+    T_amb = record[5]
 
     plot_temp_func(duration_s=duration, a=a, b=b, T_amb=T_amb)
 ```
@@ -151,4 +148,4 @@ After retrieving a record from the PSQL table, I need to test the graphing scrip
 - Insulated NTC thermistor
 - Test data processing script
 - (optional) Supplementary MATLAB test script to validate curve fitting
-- Test graphing script
+- Finish and test graphing script
